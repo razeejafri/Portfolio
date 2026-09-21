@@ -1,47 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
   <defs>
-    <linearGradient id="favCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="100%" stop-color="#2563EB" />
+    <!-- Retro 70s Triple Stripes Ribbon Gradients -->
+    <linearGradient id="favTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4FA0A8" />
+      <stop offset="100%" stop-color="#2E6A70" />
     </linearGradient>
-    <linearGradient id="favPurple" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#A855F7" />
+    <linearGradient id="favMustard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5BE58" />
+      <stop offset="100%" stop-color="#D48B1E" />
     </linearGradient>
-    <linearGradient id="favBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
-      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.9" />
+    <linearGradient id="favTerracotta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2654A" />
+      <stop offset="100%" stop-color="#B33E26" />
     </linearGradient>
-    <radialGradient id="favCore" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="50%" stop-color="#00F0FF" />
-      <stop offset="100%" stop-color="#1D4ED8" />
-    </radialGradient>
   </defs>
 
-  <!-- Dark Obsidian Base -->
-  <rect width="100" height="100" rx="26" fill="#060913" />
-  <rect x="2" y="2" width="96" height="96" rx="24" fill="none" stroke="url(#favBorder)" stroke-width="3" />
+  <!-- Tactile 70s Warm Linen Chassis Base -->
+  <rect width="100" height="100" rx="24" fill="#FAF6F0" />
+  <rect x="3" y="3" width="94" height="94" rx="21" fill="none" stroke="#351C15" stroke-width="4" />
 
-  <!-- Quantum Nexus Geometric Prism -->
-  <!-- Ascending Top Facet -->
-  <path d="M 50 18 L 78 34 L 62 43.5 L 50 36 Z" fill="url(#favCyan)" />
-  <!-- Right Facet -->
-  <path d="M 78 34 L 78 66 L 62 56.5 L 62 43.5 Z" fill="#1D4ED8" />
-  <!-- Bottom Right Facet -->
-  <path d="M 78 66 L 50 82 L 50 66 L 62 56.5 Z" fill="url(#favPurple)" />
-  <!-- Bottom Left Facet -->
-  <path d="M 50 82 L 22 66 L 38 56.5 L 50 66 Z" fill="#7C3AED" />
-  <!-- Left Facet -->
-  <path d="M 22 66 L 22 34 L 38 43.5 L 38 56.5 Z" fill="url(#favCyan)" />
-  <!-- Top Left Facet -->
-  <path d="M 22 34 L 50 18 L 50 36 L 38 43.5 Z" fill="#0284C7" />
+  <!-- Isometric 70s Retro Monogram Ribbon Prism -->
+  <g>
+    <!-- Top Loop: Retro Teal -->
+    <path d="M 50 18 L 78 34 L 64 42 L 50 34 Z" fill="url(#favTeal)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Right Loop: Mustard Gold -->
+    <path d="M 78 34 L 78 66 L 64 58 L 64 42 Z" fill="url(#favMustard)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Bottom Right Loop: Terracotta -->
+    <path d="M 78 66 L 50 82 L 50 66 L 64 58 Z" fill="url(#favTerracotta)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Bottom Left Loop: Teal -->
+    <path d="M 50 82 L 22 66 L 36 58 L 50 66 Z" fill="url(#favTeal)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Left Loop: Mustard Gold -->
+    <path d="M 22 66 L 22 34 L 36 42 L 36 58 Z" fill="url(#favMustard)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Top Left Loop: Terracotta -->
+    <path d="M 22 34 L 50 18 L 50 34 L 36 42 Z" fill="url(#favTerracotta)" stroke="#351C15" stroke-width="2.5" stroke-linejoin="round" />
 
-  <!-- Glowing Specular Ridge -->
-  <path d="M 50 18 L 50 36 L 62 43.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
-
-  <!-- Central Quantum Diamond Beacon -->
-  <polygon points="50,40 58,50 50,60 42,50" fill="url(#favCore)" />
-  <circle cx="50" cy="50" r="2.5" fill="#FFFFFF" />
+    <!-- Center Core: Solid Chocolate Mahogany Diamond -->
+    <polygon points="50,40 60,50 50,60 40,50" fill="#351C15" />
+    
+    <!-- Center Pin Point -->
+    <circle cx="50" cy="50" r="3" fill="#FAF6F0" stroke="#351C15" stroke-width="1.5" />
+  </g>
 </svg>

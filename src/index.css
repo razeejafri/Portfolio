@@ -2,22 +2,29 @@
 
 @layer base {
   * {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(53, 28, 21, 0.15);
     box-sizing: border-box;
   }
   
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: #06080F;
-    color: #F8FAFC;
+    background-color: #F4EFE6;
+    color: #351C15;
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
   }
 
   code, pre, .font-mono {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Space Mono', 'Fira Code', monospace;
+  }
+
+  .font-retro, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
   }
 
   .font-script {
@@ -25,12 +32,13 @@
   }
 
   .font-merienda {
-    font-family: 'Merienda', cursive, sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
   }
 
   .font-editorial {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-style: italic;
+    font-weight: 700;
   }
 }
 
@@ -50,53 +58,252 @@
   transform-style: preserve-3d;
 }
 
-/* Crisp Clean Cyber Grid (Matching Rondeo Balos screenshot) */
+/* 1970s Vintage Paper Noise & Halftone Grid */
 .cyber-grid {
-  background-size: 48px 48px;
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(53, 28, 21, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(53, 28, 21, 0.05) 1px, transparent 1px);
 }
 
 .cyber-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(53, 28, 21, 0.08) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
 }
 
-/* Glassmorphism Card Style */
+/* ==========================================================================
+   1970s RETRO-TECH VINTAGE DESIGN SYSTEM ("THE CLASSIC NEVER FADES")
+   Palette: Aged Cream (#F4EFE6), Chocolate Mahogany (#351C15), 
+            Retro Teal (#388087), Mustard Gold (#EAA838), Burnt Terracotta (#C84B31)
+   ========================================================================== */
+
+/* 1. Retro Parchment & Solid-Shadow Cards */
+.clay-card,
+.glass-card-premium {
+  background: #EDE3D0;
+  border-radius: 1.5rem;
+  border: 2.5px solid #351C15;
+  box-shadow: 
+    6px 6px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.6);
+  transform: translateZ(0);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.clay-card:hover,
+.glass-card-premium:hover {
+  transform: translate(-3px, -3px) translateZ(0);
+  border-color: #351C15;
+  box-shadow: 
+    9px 9px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FAF6F0;
+  border-radius: 1.25rem;
+  border: 2px solid #351C15;
+  box-shadow: 4px 4px 0px #351C15;
 }
 
 .glass-panel-hover:hover {
-  background: rgba(17, 27, 49, 0.85);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px);
+  background: #FFFFFF;
+  border-color: #351C15;
+  box-shadow: 6px 6px 0px #351C15;
+  transform: translate(-2px, -2px);
 }
 
-/* Glowing text gradients */
+/* 2. Tactile 70s Action Buttons (Burnt Terracotta & Warm Linen) */
+.clay-btn-primary {
+  background: #C84B31;
+  color: #FAF6F0 !important;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 2.5px solid #351C15;
+  box-shadow: 
+    4px 4px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.35);
+  transition: all 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.clay-btn-primary:hover {
+  background: #D95D39;
+  transform: translate(-2px, -2px);
+  box-shadow: 
+    6px 6px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.clay-btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #351C15;
+}
+
+.clay-btn-secondary {
+  background: #FAF6F0;
+  color: #351C15 !important;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 2.5px solid #351C15;
+  box-shadow: 
+    4px 4px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.8);
+  transition: all 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clay-btn-secondary:hover {
+  background: #EDE3D0;
+  transform: translate(-2px, -2px);
+  box-shadow: 
+    6px 6px 0px #351C15,
+    inset 1px 1px 0px rgba(255, 255, 255, 0.9);
+}
+
+.clay-btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #351C15;
+}
+
+/* 3. Retro Tactile Squishy Icon Buttons */
+.clay-icon-btn {
+  background: #FAF6F0;
+  color: #351C15;
+  border-radius: 0.875rem;
+  border: 2px solid #351C15;
+  box-shadow: 3px 3px 0px #351C15;
+  transition: all 0.16s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clay-icon-btn:hover {
+  transform: translate(-2px, -2px);
+  background: #EAA838;
+  color: #351C15;
+  box-shadow: 5px 5px 0px #351C15;
+}
+
+.clay-icon-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #351C15;
+}
+
+/* 4. Retro Carved Form Inputs */
+.clay-input {
+  background: #FAF6F0 !important;
+  color: #351C15 !important;
+  border-radius: 1rem;
+  border: 2.5px solid #351C15 !important;
+  box-shadow: 
+    inset 2px 2px 4px rgba(53, 28, 21, 0.12),
+    3px 3px 0px #351C15;
+  transition: all 0.2s ease;
+}
+
+.clay-input:focus-within,
+.clay-input:focus {
+  border-color: #C84B31 !important;
+  background: #FFFFFF !important;
+  box-shadow: 
+    inset 2px 2px 4px rgba(53, 28, 21, 0.08),
+    5px 5px 0px #351C15 !important;
+}
+
+/* 5. Iconic 1970s Triple-Stripe Ribbons (Teal, Mustard Gold, Burnt Terracotta) */
+.retro-stripes-diagonal {
+  background: repeating-linear-gradient(
+    -45deg,
+    #388087 0px,
+    #388087 12px,
+    #EAA838 12px,
+    #EAA838 24px,
+    #C84B31 24px,
+    #C84B31 36px
+  );
+}
+
+.retro-stripes-horizontal {
+  background: linear-gradient(
+    to bottom,
+    #388087 0%,
+    #388087 33.33%,
+    #EAA838 33.33%,
+    #EAA838 66.66%,
+    #C84B31 66.66%,
+    #C84B31 100%
+  );
+}
+
+/* 6. Analog Radio Mesh & Dials */
+.radio-speaker-mesh {
+  background-color: #DCCFBA;
+  background-image: radial-gradient(#351C15 18%, transparent 19%);
+  background-size: 7px 7px;
+}
+
+.analog-knob {
+  background: radial-gradient(circle at 35% 35%, #F5EFE6 0%, #DCCFBA 50%, #B8A68D 100%);
+  border: 2.5px solid #351C15;
+  box-shadow: 
+    3px 3px 6px rgba(53, 28, 21, 0.4),
+    inset 1px 1px 2px #FFFFFF;
+}
+
+/* 7. Retro Postage Stamp / Badge Sticker */
+.inspiration-pill-badge,
+.retro-stamp {
+  background: #FAF6F0;
+  border: 2px solid #351C15;
+  color: #351C15;
+  border-radius: 9999px;
+  padding: 0.35rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: 3px 3px 0px #351C15;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #C84B31;
+  box-shadow: 0 0 0 2px #FAF6F0, 0 0 0 3px #351C15;
+  display: inline-block;
+}
+
+/* Glowing text gradients (Tuscan Gold & Champagne Accents) */
+.gradient-text-gold,
 .gradient-text-cyan {
-  background: linear-gradient(135deg, #38BDF8 0%, #6366F1 100%);
+  background: linear-gradient(135deg, #FEF08A 0%, #F59E0B 50%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-glow {
-  background: linear-gradient(135deg, #FFFFFF 20%, #94A3B8 100%);
+  background: linear-gradient(135deg, #FAF8F5 20%, #A8A29E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-accent {
-  background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #EA580C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -269,44 +476,140 @@
   animation: pulseGlow 14s ease-in-out infinite;
 }
 
-/* Studio-Grade Frosted Glassmorphism (Hardware Accelerated for 60fps Scrolling) */
-.glass-card-premium {
-  background: rgba(11, 16, 30, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* ==========================================================================
+   5. LUXURY CHROMATIC CLAY THEMES (Champagne Gold, Terracotta Copper, Smoked Bronze, Dark Umber)
+   ========================================================================== */
+
+/* 1. Clay Gold (Imperial Champagne & Amber Gold) */
+.clay-gold,
+.clay-violet,
+.clay-theme-violet {
+  background: linear-gradient(145deg, #261B0E 0%, #171007 100%) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
   box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12),
-    0 20px 40px -15px rgba(0, 0, 0, 0.75),
-    0 0 25px -10px rgba(56, 189, 248, 0.05);
-  transform: translateZ(0);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    14px 20px 42px -8px rgba(10, 7, 3, 0.9),
+    inset 2.5px 2.5px 5px rgba(254, 243, 199, 0.2),
+    inset -4px -4px 8px rgba(5, 3, 1, 0.7) !important;
 }
 
-.glass-card-premium:hover {
-  background: rgba(14, 21, 40, 0.88);
-  border-color: rgba(96, 165, 250, 0.35);
+.clay-gold:hover,
+.clay-violet:hover,
+.clay-theme-violet:hover {
+  border-color: rgba(245, 158, 11, 0.6) !important;
   box-shadow: 
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.18),
-    0 25px 50px -18px rgba(0, 0, 0, 0.85),
-    0 0 35px -10px rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px) translateZ(0);
+    18px 26px 48px -8px rgba(217, 119, 6, 0.35),
+    0 0 24px rgba(245, 158, 11, 0.2),
+    inset 3px 3px 6px rgba(254, 243, 199, 0.3),
+    inset -4px -4px 8px rgba(5, 3, 1, 0.8) !important;
+  transform: translateY(-4px) translateZ(0);
 }
 
-/* Chromatic Studio Text Gradients */
+/* 2. Clay Copper (Warm Terracotta / Tuscan Copper) */
+.clay-copper,
+.clay-coral,
+.clay-theme-coral {
+  background: linear-gradient(145deg, #2B150C 0%, #190B06 100%) !important;
+  border: 1px solid rgba(249, 115, 22, 0.3) !important;
+  box-shadow: 
+    14px 20px 42px -8px rgba(12, 5, 2, 0.9),
+    inset 2.5px 2.5px 5px rgba(254, 215, 170, 0.2),
+    inset -4px -4px 8px rgba(6, 2, 1, 0.7) !important;
+}
+
+.clay-copper:hover,
+.clay-coral:hover,
+.clay-theme-coral:hover {
+  border-color: rgba(249, 115, 22, 0.6) !important;
+  box-shadow: 
+    18px 26px 48px -8px rgba(234, 88, 12, 0.35),
+    0 0 24px rgba(249, 115, 22, 0.2),
+    inset 3px 3px 6px rgba(254, 215, 170, 0.3),
+    inset -4px -4px 8px rgba(6, 2, 1, 0.8) !important;
+  transform: translateY(-4px) translateZ(0);
+}
+
+/* 3. Clay Bronze (Smoked Bronze / Olive Gold) */
+.clay-bronze {
+  background: linear-gradient(145deg, #221D10 0%, #141108 100%) !important;
+  border: 1px solid rgba(217, 119, 6, 0.28) !important;
+  box-shadow: 
+    14px 20px 42px -8px rgba(8, 7, 3, 0.9),
+    inset 2.5px 2.5px 5px rgba(253, 230, 138, 0.18),
+    inset -4px -4px 8px rgba(4, 3, 1, 0.7) !important;
+}
+
+.clay-bronze:hover {
+  border-color: rgba(245, 158, 11, 0.55) !important;
+  box-shadow: 
+    18px 26px 48px -8px rgba(180, 83, 9, 0.35),
+    0 0 24px rgba(245, 158, 11, 0.18),
+    inset 3px 3px 6px rgba(253, 230, 138, 0.28),
+    inset -4px -4px 8px rgba(4, 3, 1, 0.8) !important;
+  transform: translateY(-4px) translateZ(0);
+}
+
+/* 4. Clay Emerald (Royal Deep Forest Emerald & Champagne Gold Rim) */
+.clay-emerald,
+.clay-jade,
+.clay-theme-emerald {
+  background: linear-gradient(145deg, #0E2419 0%, #091710 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    14px 20px 42px -8px rgba(3, 15, 9, 0.9),
+    inset 2.5px 2.5px 5px rgba(167, 243, 208, 0.22),
+    inset -4px -4px 8px rgba(2, 8, 5, 0.75) !important;
+}
+
+.clay-emerald:hover,
+.clay-jade:hover,
+.clay-theme-emerald:hover {
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  box-shadow: 
+    18px 26px 48px -8px rgba(5, 150, 105, 0.35),
+    0 0 24px rgba(16, 185, 129, 0.25),
+    inset 3px 3px 6px rgba(167, 243, 208, 0.35),
+    inset -4px -4px 8px rgba(2, 8, 5, 0.85) !important;
+  transform: translateY(-4px) translateZ(0);
+}
+
+/* 4. Clay Umber (Deep Matte Espresso Obsidian) */
+.clay-umber,
+.clay-sky,
+.clay-theme-sky {
+  background: linear-gradient(145deg, #1C1713 0%, #100C09 100%) !important;
+  border: 1px solid rgba(251, 191, 36, 0.2) !important;
+  box-shadow: 
+    14px 20px 42px -8px rgba(7, 5, 4, 0.9),
+    inset 2.5px 2.5px 5px rgba(254, 243, 199, 0.16),
+    inset -4px -4px 8px rgba(4, 3, 2, 0.7) !important;
+}
+
+.clay-umber:hover,
+.clay-sky:hover,
+.clay-theme-sky:hover {
+  border-color: rgba(251, 191, 36, 0.5) !important;
+  box-shadow: 
+    18px 26px 48px -8px rgba(217, 119, 6, 0.25),
+    0 0 24px rgba(245, 158, 11, 0.15),
+    inset 3px 3px 6px rgba(254, 243, 199, 0.25),
+    inset -4px -4px 8px rgba(4, 3, 2, 0.8) !important;
+  transform: translateY(-4px) translateZ(0);
+}
+
+/* Chromatic Studio Text Gradients (Warm Champagne Gold) */
 .gradient-text-studio {
-  background: linear-gradient(135deg, #FFFFFF 20%, #C7D2FE 60%, #38BDF8 100%);
+  background: linear-gradient(135deg, #FAF8F5 20%, #FDE68A 60%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-aurora {
-  background: linear-gradient(135deg, #38BDF8 0%, #A78BFA 50%, #F472B6 100%);
+  background: linear-gradient(135deg, #FEF08A 0%, #F59E0B 50%, #EA580C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Animated Creative Section Divider Laser Particle */
+/* Animated Creative Section Divider Laser Particle (Warm Gold) */
 @keyframes laserTravel {
   0% {
     left: 2%;
@@ -328,68 +631,79 @@
   animation: laserTravel 6s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
 }
 
-/* Inspiration Style: Pill Badge with glowing indicator */
-.inspiration-pill-badge {
+/* Inspiration Style: Pill Badge with glowing indicator (Extruded Warm Clay Pill) */
+.inspiration-pill-badge,
+.clay-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.9rem;
+  padding: 0.35rem 0.95rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 0 15px -3px rgba(56, 189, 248, 0.12);
+  background: linear-gradient(145deg, #221B16 0%, #14100C 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 
+    4px 6px 14px -2px rgba(0, 0, 0, 0.7),
+    inset 1.5px 1.5px 3px rgba(254, 243, 199, 0.16),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.6);
   font-size: 0.7rem;
   font-family: 'Fira Code', monospace;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #38BDF8;
+  color: #FBBF24;
 }
 
 .inspiration-pill-badge .badge-dot {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 9999px;
-  background-color: #38BDF8;
-  box-shadow: 0 0 8px #38BDF8;
+  background-color: #F59E0B;
+  box-shadow: 0 0 8px #F59E0B, inset 1px 1px 2px rgba(255, 255, 255, 0.6);
   animation: pulseGlow 2.5s infinite;
 }
 
-/* Organic Silk Wave Container (Inspired by the flowing white/pearl wave panels in image) */
+/* Organic Silk Wave Container with Sculpted Espresso Bed */
 .organic-wave-container {
   position: relative;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.09) 50%, rgba(255, 255, 255, 0.04) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, #100C0A 0%, #17120F 50%, #100C0A 100%);
+  border-top: 1px solid rgba(251, 191, 36, 0.15);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.08);
   box-shadow: 
-    0 25px 60px -15px rgba(0, 0, 0, 0.7),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    0 25px 60px -15px rgba(0, 0, 0, 0.9),
+    inset 0 2px 4px rgba(254, 243, 199, 0.08),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Spotlight Card with Glowing Cyan Border (Inspired by Flutter/Dart cards in image) */
+/* Spotlight Card with Sculpted 3D Espresso Body */
 .spotlight-skill-card {
-  background: rgba(10, 15, 28, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, #1C1713 0%, #110E0B 100%);
+  border: 1px solid rgba(251, 191, 36, 0.12);
   border-radius: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 
+    10px 14px 28px -6px rgba(0, 0, 0, 0.8),
+    inset 2px 2px 4px rgba(254, 243, 199, 0.1),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.6);
 }
 
 .spotlight-skill-card:hover {
-  border-color: rgba(56, 189, 248, 0.45);
+  border-color: rgba(245, 158, 11, 0.5);
   box-shadow: 
-    0 15px 40px -10px rgba(56, 189, 248, 0.2),
-    inset 0 0 20px rgba(56, 189, 248, 0.08);
-  transform: translateY(-3px);
+    14px 20px 36px -6px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(245, 158, 11, 0.2),
+    inset 2.5px 2.5px 5px rgba(254, 243, 199, 0.2),
+    inset -3.5px -3.5px 7px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px);
 }
 
 .spotlight-hero-card {
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(10, 16, 32, 0.95) 75%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: linear-gradient(145deg, #241D17 0%, #14100C 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 1.25rem;
   box-shadow: 
-    0 0 35px -5px rgba(56, 189, 248, 0.25),
-    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    12px 18px 34px -6px rgba(0, 0, 0, 0.85),
+    0 0 28px -4px rgba(245, 158, 11, 0.3),
+    inset 2.5px 2.5px 5px rgba(254, 243, 199, 0.2),
+    inset -3.5px -3.5px 7px rgba(0, 0, 0, 0.65);
 }
 
 
