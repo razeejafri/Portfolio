@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { Mail, Check, Copy, X, FileText, Download, Send } from 'lucide-react';
+import { Check, Copy, Download, Send } from 'lucide-react';
 import { GithubSvgIcon, XIcon, InstagramIcon, LinkedinIcon } from '../icons/SocialIcons';
 import MagneticButton from '../ui/MagneticButton';
 import ScrollReveal from '../ui/ScrollReveal';
@@ -8,7 +8,6 @@ import Logo from '../icons/Logo';
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const [showResumeModal, setShowResumeModal] = useState(false);
   const [isVideoInView, setIsVideoInView] = useState(false);
   const videoContainerRef = useRef(null);
   const [formData, setFormData] = useState({
@@ -16,18 +15,6 @@ export default function ContactSection() {
     email: '',
   });
   const [submitted, setSubmitted] = useState(false);
-
-  // Prevent background body scrolling when resume modal is open
-  useEffect(() => {
-    if (showResumeModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [showResumeModal]);
 
   // Viewport observer to defer 2.7MB video download until user scrolls near
   useEffect(() => {
@@ -178,17 +165,18 @@ export default function ContactSection() {
                   </div>
                 )}
 
-                {/* View Resume Button Centered Under Form with Magnetic Pull */}
+                {/* Direct Download CV Button Centered Under Form with Magnetic Pull */}
                 <div className="pt-4 text-center sm:text-left">
                   <MagneticButton strength={0.3} textStrength={0.15}>
-                    <button
-                      type="button"
-                      onClick={() => setShowResumeModal(true)}
-                      className="clay-btn-secondary inline-flex items-center justify-center gap-2 px-9 py-3.5 rounded-full font-bold text-base cursor-pointer group/resume text-[#351C15]"
+                    <a
+                      href={personalInfo.resumeUrl}
+                      download="Razee_Jafri_Resume.pdf"
+                      className="clay-btn-secondary inline-flex items-center justify-center gap-2 px-9 py-3.5 rounded-full font-bold text-base cursor-pointer group/resume text-[#351C15] transition-all hover:scale-[1.02]"
+                      title="Download Razee Jafri CV (PDF)"
                     >
-                      <FileText className="w-4 h-4 text-[#C84B31] group-hover/resume:scale-110 group-hover/resume:-translate-y-0.5 transition-transform duration-200" />
-                      <span>View Resume</span>
-                    </button>
+                      <Download className="w-4 h-4 text-[#C84B31] group-hover/resume:scale-110 group-hover/resume:translate-y-0.5 transition-transform duration-200" />
+                      <span>Download CV</span>
+                    </a>
                   </MagneticButton>
                 </div>
 
@@ -314,118 +302,6 @@ export default function ContactSection() {
         </div>
 
       </div>
-
-      {/* Interactive Resume Modal */}
-      {showResumeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#351C15]/75 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#FAF6F0] border-2 border-[#351C15] rounded-2xl p-6 sm:p-8 shadow-[12px_12px_0px_#351C15] text-left">
-            
-            {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b-2 border-[#351C15]/20">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#C84B31] text-[#FAF6F0] border-2 border-[#351C15] shadow-[2px_2px_0px_#351C15] flex items-center justify-center">
-                  <FileText className="w-4 h-4" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-retro font-bold text-[#351C15]">
-                    {personalInfo.name} — Curriculum Vitae
-                  </h3>
-                  <p className="text-xs text-[#7A5042] font-mono font-bold">
-                    Full-Stack Developer • MERN &amp; Next.js Specialist
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowResumeModal(false)}
-                className="p-1.5 rounded-lg bg-[#EDE3D0] hover:bg-[#DDD0BA] text-[#351C15] border border-[#351C15] transition-colors cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Resume Summary Content */}
-            <div className="py-6 space-y-6 text-sm text-[#351C15]">
-              
-              <div>
-                <h4 className="text-xs font-mono font-bold text-[#C84B31] uppercase tracking-wider mb-2">
-                  Professional Summary
-                </h4>
-                <p className="text-[#5A382C] leading-relaxed text-xs sm:text-sm font-sans">
-                  Full-Stack Developer specializing in MERN stack and Next.js, with a proven track record of independently designing and shipping end-to-end web applications — from system architecture to production cloud deployment. Experienced with real-time Socket.io systems, payment gateways, containerized Docker deployments, and AI-driven features.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-mono font-bold text-[#C84B31] uppercase tracking-wider mb-2">
-                  Current Experience
-                </h4>
-                <div className="p-3.5 rounded-xl bg-[#EDE3D0] border-2 border-[#351C15]">
-                  <div className="flex justify-between items-center text-xs font-bold text-[#351C15]">
-                    <span>Intern – Software Developer</span>
-                    <span className="font-mono text-[#7A5042] text-[11px]">May 2026 – Present</span>
-                  </div>
-                  <div className="text-xs text-[#C84B31] font-bold mb-2">Pulpy Digital Media OPC Pvt. Ltd.</div>
-                  <p className="text-xs text-[#5A382C] font-sans">
-                    Collaborating on live production codebases, implementing backend caching strategies, microservices, and modern CI/CD pipelines.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-mono font-bold text-[#C84B31] uppercase tracking-wider mb-2">
-                  Education &amp; Credentials
-                </h4>
-                <div className="p-3.5 rounded-xl bg-[#EDE3D0] border-2 border-[#351C15]">
-                  <div className="flex justify-between items-center text-xs font-bold text-[#351C15]">
-                    <span>B.Tech in Information Technology</span>
-                    <span className="font-mono text-[#7A5042] text-[11px]">2022 – 2026</span>
-                  </div>
-                  <div className="text-xs text-[#5A382C] font-sans">Dr. Ambedkar Institute of Technology for Divyangjan • Kanpur, UP</div>
-                  <div className="text-xs text-[#C84B31] mt-1 font-mono font-bold">GPA: 7.5 / 10.00 • Oracle Cloud AI Associate Certified (2025)</div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-mono font-bold text-[#C84B31] uppercase tracking-wider mb-2">
-                  Key Technical Skills
-                </h4>
-                <div className="flex flex-wrap gap-1.5 text-xs font-mono">
-                  {["React 19", "Next.js 16", "Node.js", "Express", "TypeScript", "Socket.io", "Docker", "MongoDB", "PostgreSQL", "Redis", "Tailwind CSS", "WebAssembly"].map(s => (
-                    <span key={s} className="px-2.5 py-1 rounded bg-[#EDE3D0] text-[#351C15] font-bold border border-[#351C15] shadow-[1.5px_1.5px_0px_#351C15]">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-
-            {/* Modal Footer Actions */}
-            <div className="pt-4 border-t-2 border-[#351C15]/20 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-[#7A5042] font-mono font-bold">
-                Direct Contact: jafrirazee@gmail.com
-              </span>
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <button
-                  onClick={() => window.print()}
-                  className="flex-1 sm:flex-none px-4 py-2 rounded-xl clay-btn-secondary text-[#351C15] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Print / Save PDF</span>
-                </button>
-                <a
-                  href={`mailto:${personalInfo.email}?subject=Resume Inquiry - Razee Jafri`}
-                  className="flex-1 sm:flex-none px-5 py-2 rounded-xl clay-btn-primary text-[#FAF6F0] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>Contact Razee</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      )}
 
     </section>
   );

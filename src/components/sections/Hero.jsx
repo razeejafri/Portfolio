@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { MapPin, Mail, ArrowRight } from 'lucide-react';
+import { MapPin, Mail, ArrowRight, Download } from 'lucide-react';
 import GithubIcon from '../icons/GithubIcon';
 import { LinkedinIcon } from '../icons/SocialIcons';
 import MagneticButton from '../ui/MagneticButton';
@@ -103,6 +103,18 @@ export default function Hero() {
                   >
                     <span>Featured Projects</span>
                     <ArrowRight className="w-4 h-4 text-[#C84B31] group-hover:translate-x-1.5 transition-transform duration-200" />
+                  </a>
+                </MagneticButton>
+
+                <MagneticButton strength={0.25} textStrength={0.12}>
+                  <a
+                    href={personalInfo.resumeUrl}
+                    download="Razee_Jafri_Resume.pdf"
+                    className="clay-btn-secondary group px-7 py-3.5 text-xs uppercase tracking-wider font-bold flex items-center gap-2 text-[#351C15]"
+                    title="Download Razee Jafri CV"
+                  >
+                    <Download className="w-4 h-4 text-[#C84B31] group-hover:translate-y-0.5 transition-transform duration-200" />
+                    <span>Download CV</span>
                   </a>
                 </MagneticButton>
               </div>

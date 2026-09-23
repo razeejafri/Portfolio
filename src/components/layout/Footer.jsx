@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Download } from 'lucide-react';
 import Logo from '../icons/Logo';
 
 export default function Footer() {
@@ -22,9 +22,17 @@ export default function Footer() {
           <span className="hidden sm:inline font-bold text-[#5A382C]">&copy; {new Date().getFullYear()} Razee Jafri</span>
         </div>
 
-        {/* Back to top */}
-        <div className="flex items-center gap-4">
-          <span className="text-[#7A5042] font-semibold">Engineered for Performance &amp; Scalability</span>
+        {/* Back to top & CV */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <a
+            href="/Razee_Jafri_Resume.pdf"
+            download="Razee_Jafri_Resume.pdf"
+            className="clay-btn-secondary px-3.5 py-1.5 rounded-xl text-[#351C15] font-bold hover:text-[#C84B31] transition-all cursor-pointer flex items-center gap-1.5"
+            title="Download Razee Jafri CV"
+          >
+            <Download className="w-3.5 h-3.5 text-[#C84B31]" />
+            <span>Download CV</span>
+          </a>
           <button
             onClick={scrollToTop}
             className="clay-btn-secondary px-3.5 py-1.5 rounded-xl text-[#351C15] font-bold hover:text-[#C84B31] transition-all cursor-pointer flex items-center gap-1.5"

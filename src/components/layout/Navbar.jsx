@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import GithubIcon from '../icons/GithubIcon';
 import MagneticButton from '../ui/MagneticButton';
 import Logo from '../icons/Logo';
@@ -78,7 +78,18 @@ export default function Navbar() {
         </nav>
 
         {/* Right: Tactile 3D Clay Button with Magnetic Pull */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
+          <MagneticButton strength={0.25} textStrength={0.12}>
+            <a
+              href={personalInfo.resumeUrl}
+              download="Razee_Jafri_Resume.pdf"
+              className="clay-btn-secondary px-5 py-2.5 text-xs tracking-wider font-bold flex items-center gap-1.5 text-[#351C15]"
+              title="Download Razee Jafri CV"
+            >
+              <Download className="w-3.5 h-3.5 text-[#C84B31]" />
+              <span>Download CV</span>
+            </a>
+          </MagneticButton>
           <MagneticButton strength={0.25} textStrength={0.12}>
             <a
               href="#contact"
@@ -121,6 +132,15 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <a
+            href={personalInfo.resumeUrl}
+            download="Razee_Jafri_Resume.pdf"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2 text-sm font-mono font-bold tracking-wider text-[#C84B31] py-1"
+          >
+            <Download className="w-4 h-4" />
+            <span>DOWNLOAD CV</span>
+          </a>
           <div className="pt-2 border-t-2 border-[#351C15]/20 flex items-center gap-4 text-xs font-mono text-[#5A382C]">
             <a href={personalInfo.github} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#351C15] hover:text-[#C84B31] transition-colors">
               <GithubIcon className="w-4 h-4" />

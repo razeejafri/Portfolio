@@ -9,7 +9,7 @@ export const personalInfo = {
   phone: "+91-8739926740",
   github: "https://github.com/razeejafri",
   linkedin: "https://linkedin.com/in/razeejafri",
-  resumeUrl: "#resume",
+  resumeUrl: "/Razee_Jafri_Resume.pdf",
   status: "Available for Full-Time & High-Impact Roles",
 };
 
